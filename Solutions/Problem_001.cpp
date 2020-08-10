@@ -10,12 +10,13 @@ using namespace std;
 #define pb push_back
 #define FOREACH(it, l) for(auto it = l.begin(); it!= l.end(); it++)
 
+// The function below is the implementation of the problem
 
 bool check_sum(vector<int> a, int k){
-    unordered_set<int> pt;
-    for(int num : a){
-        if(pt.find(num) != pt.end()) return true;
-        pt.insert(k-num);
+    unordered_set<int> pt;                          // Create a Unordered Search Structure
+    for(int num : a){                               // Run a loop and check whether compliment of each 
+        if(pt.find(num) != pt.end()) return true;   // number is present in the set
+        pt.insert(k-num);                           // if not, insert it in the set
     }
     return false;
 }
